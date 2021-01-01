@@ -12,7 +12,7 @@ export const Approuter = ()=>{
         <Router>
             <Switch>
               <Route exact component={Home} path="/"/>
-              <Route exact component={ProductInfo} path="/products"/>
+              <Route exact component={ProductInfo} path="/product"/>
               <Route exact component={Checkout} path="/checkout"/>
               <Route exact component={Success} path="/success"/>
               <Route exact component={Payment} path="/payment"/>

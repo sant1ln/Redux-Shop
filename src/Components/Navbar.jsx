@@ -1,16 +1,19 @@
 import React from 'react'
+import '../styles/components/navbar.css'
 
 export const Navbar = () => {
     return (
-        <nav>
-            <div>
-                <h1>ReduxShop</h1>
-            </div>
-            <form>
+        <nav className="navbar">
+            <a href="/" className="navbar_title">
+                <h1>Redux<br/><span>Shop</span></h1>
+            </a>
+            <form className="navbar_">
                 <input type="Busca algo!"/>
             </form>
-            <button>Login</button>
-            <button>CarShop</button>
+            <div className="navbar_buttons">
+                <i className="fas fa-shopping-cart"></i>
+                <i className="fas fa-user"></i>
+            </div>
         </nav>
     )
 }

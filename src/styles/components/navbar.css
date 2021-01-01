@@ -1,0 +1,40 @@
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    max-width: 100%;
+    height: 8vh;
+    font-family: 'Audiowide', cursive;
+    background-color: var(--main_color);
+    border: 1px solid var(--border_color);
+    margin-bottom: 10px;
+}
+.navbar_title{
+    text-decoration: none;
+    margin: 0;
+    color: wheat;
+    font-size: 1rem;
+}
+
+.navbar_search input{
+    background-color: var(--font_texts-color);
+    border: none;
+    outline: none;
+    height: 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    color: white;
+}
+
+
+.navbar_title h1 span{
+    margin-left: 25px;
+}
+
+.navbar_buttons{
+    width: 20%;
+    display: flex;
+    font-size: 1rem ;
+    justify-content: space-around;
+    color: var(--button_main_color)
+}

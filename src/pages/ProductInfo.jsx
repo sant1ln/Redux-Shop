@@ -1,10 +1,11 @@
 import React from 'react'
-import { Product } from '../Components/Product'
+import Static from '../assets/default.png'
 
+import '../styles/pages/product_info.css'
 export const ProductInfo = () => {
     return (
         <div className="productInfo_container">
-            <Product/>
+            <img src={Static}/>
             <div className="productInfo_data"></div>
         </div>
     )

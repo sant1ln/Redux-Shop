@@ -37,4 +37,9 @@
     font-size: 1rem ;
     justify-content: space-around;
     color: var(--button_main_color)
+    
+}
+
+.navbar_buttons a{
+    color: var(--button_main_color)
 }

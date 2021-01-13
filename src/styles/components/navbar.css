@@ -43,3 +43,17 @@
 .navbar_buttons a{
     color: var(--button_main_color)
 }
+
+.counter{
+    background-color: white;
+    border-radius: 25px;
+    width: 12px;
+    height: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: .5rem;
+    position: absolute;
+    right: 60px;
+    color: black
+}

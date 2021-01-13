@@ -1,8 +1,13 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import "../styles/components/navbar.css";
 
 export const Navbar = ({ children }) => {
+
+  const {cart} = useSelector(state => state.ui)
+  
+
   return (
     <>
       <nav className="navbar">
@@ -18,6 +23,7 @@ export const Navbar = ({ children }) => {
         </form>
         <div className="navbar_buttons">
           <Link to="/checkout">
+            <div className="counter">{cart.length}</div>
             <i className="fas fa-shopping-cart"></i>
           </Link>
           <i className="fas fa-user"></i>

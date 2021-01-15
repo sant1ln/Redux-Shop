@@ -1,4 +1,4 @@
-export const addToCart = () =>({
+export const addToCart = (data) =>({
     type: 'ADD_TO_CART',
-    payload: 'ReactShop'
+    payload: data
 })

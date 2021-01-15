@@ -8,7 +8,7 @@ export const uiReducers = (state=initialState,action) =>{
                 ...state,
                 cart:[
                     ...state.cart,
-                    {...action.payload}]
+                    action.payload]
             }
         default: return state
             

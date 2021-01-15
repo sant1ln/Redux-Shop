@@ -21,6 +21,7 @@
     border: 1px solid var(--border_color);
     background-color: #1A192D;
     margin-bottom: 10px;
+    border-radius: 5px;
 }
 
 

@@ -14,7 +14,7 @@ export const Approuter = ()=>{
           <Navbar>
               <Switch>
                 <Route exact component={Home} path="/"/>
-                <Route exact component={ProductInfo} path="/product"/>
+                <Route exact component={ProductInfo} path="/product/:id"/>
                 <Route exact component={Checkout} path="/checkout"/>
                 <Route exact component={Payment} path="/payment"/>
                 <Route exact component={Success} path="/success"/>

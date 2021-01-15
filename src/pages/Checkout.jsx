@@ -1,7 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import Static from "../assets/default.png";
 import "../styles/pages/checkout.css";
 
 export const Checkout = () => {
@@ -12,10 +11,10 @@ export const Checkout = () => {
       <ul className="checkout-list">
         {cart.map((item) => (
           <li>
-            <img src={Static} alt="" />
+            <img src={item.img} alt="" />
             <div className="item_data">
-              <p>product</p>
-              <p>$345</p>
+              <p>{item.name}</p>
+              <p>${item.price}</p>
             </div>
             <i className="fas fa-times-circle cancel"></i>
           </li>

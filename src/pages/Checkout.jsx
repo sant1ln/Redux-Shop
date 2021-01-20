@@ -6,11 +6,17 @@ import "../styles/pages/checkout.css";
 export const Checkout = () => {
   const { cart } = useSelector((state) => state.ui);
 
+  let toPay = 0
+  cart.map((data)=>(
+    toPay += data.price
+  ))
+
   return (
     <div className="checkout-container">
       <ul className="checkout-list">
+        <h2>To pay: {toPay}</h2>
         {cart.map((item) => (
-          <li>
+          <li key={item.id}>
             <img src={item.img} alt="" />
             <div className="item_data">
               <p>{item.name}</p>

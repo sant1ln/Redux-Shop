@@ -1,9 +1,8 @@
 export const initialState = {
     cart: [],
-    "id": 2,
     products: [
       {
-        "id": 32,
+        "id": 2,
         "name": "Surface",
         "description":"The new Surface Laptop 3 is now available with the new 13.5 and 15 touchscreens, vivid color options",
         "img": "https://img-prod-cms-rt-microsoft-com.akamaized.net/cms/api/am/imageFileData/RE3oYjc?ver=a28c",
@@ -11,9 +10,9 @@ export const initialState = {
       }, 
       {
         "id": 3,
-        "name": "Mouse Vertical",
-        "description":"Mouse Ergonómico de pilas, Plug and Play: Sólo conectar el receptor nano USB incluido en el puerto USB de tu computadora, sin driver adicional necesario, y pronto listo para disfrutar de la comodidad.",
-        "img": "https://http2.mlstatic.com/D_NQ_NP_2X_638085-MCO43251461194_082020-F.webp",
+        "name": "Samsung Galaxy S20",
+        "description":"Compra el nuevo Galaxy S20 FE, S20, S20 Plus, S20 Ultra en Samsung Colombia",
+        "img": "https://images.samsung.com/is/image/samsung/p5/co/smartphones/galaxy-s20/buy/bts/S20_New_buying_page_KV_MO_720x720.jpg",
         "price": 2.13
       },
       {

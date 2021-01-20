@@ -9,4 +9,5 @@ export const Footer = () => {
             <div className="footer_info">info</div>
         </footer>
     )
+    /* 48Jq35ItIiFhyXdS */
 }

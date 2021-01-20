@@ -9,23 +9,23 @@ export const ProductInfo = () => {
   const {getProductsById} = useData()
   const {id} = useParams()
   const idProduct = parseInt(id)
-  const product = getProductsById(idProduct)
-
+  const [product] = getProductsById(idProduct)
+  
   const dispatch = useDispatch()
-
+  const {img,name,description,price} = product
   const add = () =>{
     dispatch(addToCart(product))
-}
+  }
   
   return (
     <div className="productInfo_container">
-      <img src={product[0].img} alt="react_img" />
+      <img src={img} alt="react_img" />
       <div className="productInfo_data">
         <div className="productInfo_data-title">
-          <h2>{product[0].name}</h2>
+          <h2>{name}</h2>
         </div>
-        <p className="productInfo_data-description">{product[0].description}</p>
-        <p className="productInfo_data-price">${product[0].price}</p>
+        <p className="productInfo_data-description">{description}</p>
+        <p className="productInfo_data-price">${price}</p>
       </div>
       <div className="productInfo_buttons">
         <button onClick={add} className="add">Add to cart <i className="fas fa-shopping-cart"></i></button>

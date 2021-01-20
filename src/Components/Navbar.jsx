@@ -11,14 +11,14 @@ export const Navbar = ({ children }) => {
   return (
     <>
       <nav className="navbar">
-        <a href="/" className="navbar_title">
+        <Link to="/" className="navbar_title">
           <h1>
             Redux
             <br />
             <span>Shop</span>
           </h1>
-        </a>
-        <form className="navbar_">
+        </Link>
+        <form className="navbar_search">
           <input type="Busca algo!" />
         </form>
         <div className="navbar_buttons">

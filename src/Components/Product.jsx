@@ -7,6 +7,7 @@ import '../styles/components/product.css'
 export const Product = ({name,id,desc,img,price}) => {
     const dispatch = useDispatch()
     const actual = {
+        id,
         name,
         desc,
         img,

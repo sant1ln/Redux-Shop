@@ -17,7 +17,7 @@
 }
 
 .navbar_search input{
-    background-color: var(--font_texts-color);
+    background-color: var(--inputs_main_color);
     border: none;
     outline: none;
     height: 20px;

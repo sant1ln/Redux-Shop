@@ -11,25 +11,25 @@ export const Payment = () => {
         <div className="form_data">
           <label htmlFor="name">
             <p>Name</p>
-            <input type="text" name="name" id="name" />
+            <input className="payment_input bad" type="text" name="name" id="name" />
           </label>
           <label htmlFor="lastName">
             <p>LastName</p>
-            <input type="text" name="lastName" id="lastName" />
+            <input className="payment_input good" type="text" name="lastName" id="lastName" />
           </label>
         </div>
         <div className="form_data">
           <label htmlFor="email">
             <p>Email</p>
-            <input type="email" name="email" id="email" />
+            <input className="payment_input"  type="email" name="email" id="email" />
           </label>
           <label htmlFor="phone">
             <p>Phone</p>
-            <input type="number" name="phone" id="phone" />
+            <input className="payment_input" type="number" name="phone" id="phone" />
           </label>
           <label htmlFor="addres">
             <p>Addres</p>
-            <input type="text" name="addres" id="addres" />
+            <input className="payment_input" type="text" name="addres" id="addres" />
           </label>
         </div>
         <div className="payment_confirm">

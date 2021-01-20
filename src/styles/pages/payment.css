@@ -1,3 +1,5 @@
+
+
 .payment_container{
     display: flex;
     flex-direction: column;
@@ -41,7 +43,7 @@
     color: var(--alternative_font_color)
 }
 
-.form_data input{
+.payment_input{
     width: 90%;
     height: 40px;
     border: none;
@@ -89,3 +91,15 @@
     background-color: transparent;
     border: 1px solid white;
 }
+
+
+/* states */
+
+.good{
+    border:2px solid #16bf62;
+}
+
+.bad{
+    border:2px solid red;
+}
+

@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { addToCart } from "../actions/uiActions";
 import { useData } from "../hooks/useData";
 
@@ -29,7 +29,7 @@ export const ProductInfo = () => {
       </div>
       <div className="productInfo_buttons">
         <button onClick={add} className="add">Add to cart <i className="fas fa-shopping-cart"></i></button>
-        <button className="pay">Pay</button>
+        <Link to="/checkout" className="pay">Pay</Link>
       </div>
     </div>
   );

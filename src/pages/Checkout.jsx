@@ -1,15 +1,35 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { cancelPurchase, removeToCart } from "../actions/uiActions";
+import { NotProduct } from "../Components/NotProduct";
 import "../styles/pages/checkout.css";
 
 export const Checkout = () => {
   const { cart } = useSelector((state) => state.ui);
 
+  const dispatch = useDispatch()
+
+
   let toPay = 0
   cart.map((data)=>(
     toPay += data.price
   ))
+  
+  const remove = (idCart) =>{
+    dispatch(removeToCart(idCart))
+  }
+
+  const cancelAll = () =>{
+    dispatch(cancelPurchase())
+  }
+  
+  if(!cart.length){
+    return(
+      <NotProduct />
+    )
+  }
+
 
   return (
     <div className="checkout-container">
@@ -22,7 +42,7 @@ export const Checkout = () => {
               <p>{item.name}</p>
               <p>${item.price}</p>
             </div>
-            <i className="fas fa-times-circle cancel"></i>
+            <i onClick={()=>remove(item.idCart)} className="fas fa-times-circle cancel"></i>
           </li>
         ))}
       </ul>
@@ -30,7 +50,7 @@ export const Checkout = () => {
         <Link className="pay" to="/payment">
           Pay
         </Link>
-        <button className="cancel_buy">Cancel</button>
+        <button onClick={cancelAll} className="cancel_buy">Cancel</button>
       </div>
     </div>
   );

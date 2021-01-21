@@ -52,7 +52,8 @@
     padding: 0 5px;
     font-size: 1.2rem;
     background-color: var(--inputs_main_color);
-    color: white
+    color: white;
+    outline: none;
 }
 
 .payment_confirm{

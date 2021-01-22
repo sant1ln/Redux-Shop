@@ -1,5 +1,6 @@
 export const uiState = {
     cart: [],
+    searched: [],
     showRecap : true,
     products: [
       {

@@ -6,11 +6,12 @@ import { useSelector } from 'react-redux'
 
 export const ListProducts = () => {
 
-    const {products} = useSelector(state => state.ui)
+    const {products,searched} = useSelector(state => state.ui)
     
     return (
         <div className="list_container">
-            {products.map(product =>(
+            {(searched.length>=1)
+             ?searched.map(product =>(
                 <Product
                     key={product.id}
                     id={product.id}
@@ -19,7 +20,18 @@ export const ListProducts = () => {
                     img={product.img}
                     price={product.price}
                 />
-            ))}
+            ))
+            :products.map(product =>(
+                <Product
+                    key={product.id}
+                    id={product.id}
+                    name={product.name}
+                    desc={product.description}
+                    img={product.img}
+                    price={product.price}
+                />
+            ))
+            }
             
         </div>
     )

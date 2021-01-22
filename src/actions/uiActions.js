@@ -26,3 +26,13 @@ export const emptyCart = () => ({
 export const toggleView = () => ({
     type: 'TOGGLE_REACAP'
 })
+
+
+export const searchProduct = (searchValue) =>({
+    type: 'SEARCH',
+    payload: searchValue
+})
+
+export const reset = () =>({
+    type: 'RESET'
+})

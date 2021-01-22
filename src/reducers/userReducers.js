@@ -11,6 +11,11 @@ export const userReducers = (state=userState,action) =>{
                 ...state,
                 orders: action.payload
             }
+        case 'END_PROCESS':
+            return{
+                userInfo: [],
+                orders: []
+            }
         default: return state
           
     }

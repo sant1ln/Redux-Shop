@@ -1,6 +1,7 @@
 import React from 'react'
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
+import { cancelPurchase } from '../actions/uiActions';
 import { addUser } from '../actions/userActions';
 /* import { Link } from "react-router-dom"; */
 import { useCheckForm } from "../hooks/useCheckForm";
@@ -12,9 +13,10 @@ export const PaymentInfo = () => {
   const [formState, handleInputChange,setFormState] = useFrom();
   const { name, lastName, email, ID, addres} = formState;
   const [check,checkInput] = useCheckForm()
-  const { nameOk, lastNameOk, emailOk, IdOk, addresOk,isCorrect} = check
+  const { nameOk, lastNameOk, emailOk, IdOk, addresOk,completed} = check
   const dispatch = useDispatch()
   const history = useHistory()
+
   const addUserInfo = (e) =>{
     e.preventDefault()
     dispatch(addUser(formState))
@@ -22,12 +24,24 @@ export const PaymentInfo = () => {
     history.push('/payment')
   }
 
+  const cancelBuy = () =>{
+    dispatch(cancelPurchase())
+  }
+
+  let isCorrect= ''
+
+  if(completed > 4){
+    console.log('x');
+    isCorrect= true
+  }else{
+    isCorrect = false
+  }
 
 
   return (
     <div className="payment_container">
       <h2>Enter your shipping information</h2>
-      <form className="payment_contianer_form">
+      <form className="payment_contianer_form" onSubmit={addUserInfo}>
         <div className="form_data">
           <label htmlFor="name">
             <p>Name</p>
@@ -100,7 +114,7 @@ export const PaymentInfo = () => {
             ?<button type="submit" onClick={addUserInfo} className="pay">Pay</button>
             :<button type="button" className="pay_block">Pay</button>
           }
-          <button  className="cancel_buy">Cancel</button>
+          <button onClick={cancelBuy}  className="cancel_buy">Cancel</button>
         </div>
       </form>
     </div>

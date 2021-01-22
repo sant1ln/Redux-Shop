@@ -31,10 +31,19 @@ export const uiReducers = (state=uiState,action) =>{
             }
         case 'TOGGLE_REACAP':
             let acutalState = state.showRecap
-            console.log(acutalState);
             return{
                 ...state,
                 showRecap: !acutalState
+            }
+        case 'SEARCH':
+            return{
+                ...state,
+                searched: state.products.filter((product) => product.name.toLowerCase().includes(action.payload.toLowerCase())),
+            }
+        case 'RESET':
+            return{
+                ...state,
+                searched: []
             }
         default: return state
             

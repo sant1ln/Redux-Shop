@@ -7,3 +7,7 @@ export const addNewOrder = (newOrder) =>({
     type: 'ADD_NEW_ORDER',
     payload: newOrder
 })
+
+export const endAllProcess = () => ({
+    type: 'END_PROCESS'
+})

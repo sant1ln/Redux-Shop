@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
-import {emptyCart, toggleView } from "../actions/uiActions";
+import {cancelPurchase, emptyCart, toggleView } from "../actions/uiActions";
 import { addNewOrder } from "../actions/userActions";
 import { CheckoutBasic } from "../Components/CheckoutBasic";
 import "../styles/pages/payment.css";
@@ -23,6 +23,11 @@ export const Payment = () => {
     dispatch(addNewOrder(cart))
     dispatch(emptyCart())
     history.push('/success')
+  }
+
+  const cancelBuy = () =>{
+    dispatch(cancelPurchase())
+    history.push('/')
   }
   
   return (
@@ -74,7 +79,7 @@ export const Payment = () => {
         <button onClick={newOrder} type="button" className="pay_end">
           Pay
         </button>
-        <button className="cancel_buy">Cancel</button>
+        <button onClick={cancelBuy} className="cancel_buy">Cancel</button>
       </div>
     </div>
   );

@@ -29,7 +29,7 @@ export const ProductInfo = () => {
       </div>
       <div className="productInfo_buttons">
         <button onClick={add} className="add">Add to cart <i className="fas fa-shopping-cart"></i></button>
-        <Link to="/checkout" className="pay">Pay</Link>
+        <Link to="/checkout" onClick={add} className="pay">Pay</Link>
       </div>
     </div>
   );

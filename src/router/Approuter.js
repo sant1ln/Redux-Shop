@@ -1,6 +1,6 @@
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
+import { Footer } from "../Components/Footer";
 import { Navbar } from "../Components/Navbar";
-import { About } from "../pages/About";
 import { Checkout } from "../pages/Checkout";
 import { Home } from "../pages/Home";
 import { NotFound } from "../pages/NotFound";
@@ -20,10 +20,10 @@ export const Approuter = ()=>{
                 <Route exact component={PaymentInfo} path="/paymentinfo"/>
                 <Route exact component={Payment} path="/payment"/>
                 <Route exact component={Success} path="/success"/>
-                <Route exact component={About} path="/about"/>
                 <Route exact component={NotFound} path="*"/>
               </Switch>
           </Navbar>
+          <Footer />
         </Router>
       );
 }

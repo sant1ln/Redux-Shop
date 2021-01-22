@@ -15,7 +15,7 @@ export const Product = ({ name, id, desc, img, price }) => {
   };
   const add = () => {
     let itemId = Math.floor(Math.random() * (500 - 100)) + 100
-    console.log(itemId)
+      
     dispatch(addToCart(actual,itemId));
   };
   const shortDesc = desc.substring(0, 50) + "(...)";

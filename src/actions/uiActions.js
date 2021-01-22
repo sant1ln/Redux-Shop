@@ -17,3 +17,12 @@ export const removeToCart = (id) =>({
 export const cancelPurchase = () =>({
     type: 'CANCEL_PURCHASE',
 })
+
+export const emptyCart = () => ({
+    type: 'EMPTY_CART'
+})
+
+
+export const toggleView = () => ({
+    type: 'TOGGLE_REACAP'
+})

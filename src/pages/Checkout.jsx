@@ -9,8 +9,7 @@ export const Checkout = () => {
   const { cart } = useSelector((state) => state.ui);
 
   const dispatch = useDispatch()
-
-
+  
   let toPay = 0
   cart.map((data)=>(
     toPay += data.price
@@ -47,7 +46,7 @@ export const Checkout = () => {
         ))}
       </ul>
       <div className="checkout_confirm">
-        <Link className="pay" to="/payment">
+        <Link className="pay" to="/paymentinfo">
           Pay
         </Link>
         <button onClick={cancelAll} className="cancel_buy">Cancel</button>

@@ -1,17 +1,15 @@
 import {useState} from 'react'
 
-export const useFrom = () => {
+export const useFrom = (data) => {
     const initialState ={
-        name: "",
-        lastName: "",
-        email: "",
-        phone: "",
-        ID: "",
-        addres: "",
+        name: "Stave J",
+        lastName: "Jhonson",
+        email: "stave.204@gmail.com",
+        ID: "2571035",
+        addres: "Av 505 st 40 - 34 Los Angeles C.A",
     }
-    const [formState, setFormState] = useState(initialState)
-    
-    
+    const [formState, setFormState] = useState(data = initialState)
+        
     const handleInputChange = ({target}) =>{
       
         setFormState({
@@ -20,5 +18,5 @@ export const useFrom = () => {
         })
     }
 
-    return [formState,handleInputChange]
+    return [formState,handleInputChange,setFormState]
 }

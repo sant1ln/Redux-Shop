@@ -1,106 +1,81 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { useCheckForm } from "../hooks/useCheckForm";
-import { useFrom } from "../hooks/useFrom";
+import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
+import {emptyCart, toggleView } from "../actions/uiActions";
+import { addNewOrder } from "../actions/userActions";
+import { CheckoutBasic } from "../Components/CheckoutBasic";
 import "../styles/pages/payment.css";
 
 export const Payment = () => {
+  const history = useHistory();
+  const dispatch = useDispatch();
+  const {cart,showRecap} = useSelector(state => state.ui)
+  const {userInfo} = useSelector(state => state.user)
   
+  let toPay = 0
+  cart.map((data)=>toPay += data.price)
+  
+  const toggleRecap = () =>{
+    dispatch(toggleView())
+  }
 
-  const [formState, handleInputChange] = useFrom();
-  const { name, lastName, email, phone, ID, addres} = formState;
-  const [check,checkInput] = useCheckForm()
-  const { nameOk, lastNameOk, emailOk, phoneOk,IdOk, addresOk} = check
-
+  const newOrder = () =>{
+    dispatch(addNewOrder(cart))
+    dispatch(emptyCart())
+    history.push('/success')
+  }
+  
   return (
-    <div className="payment_container">
-      <h2>Enter your shipping information</h2>
-      <form className="payment_contianer_form">
-        <div className="form_data">
-          <label htmlFor="name">
-            <p>Name</p>
-            <input
-              className={`payment_input ${nameOk}`}
-              onChange={handleInputChange}
-              onBlur={checkInput}
-              value={name}
-              type="text"
-              name="name"
-              id="name"
-              title="Must be longer than 2 characters"
-            />
-          </label>
-          <label htmlFor="lastName">
-            <p>LastName</p>
-            <input
-              className={`payment_input ${lastNameOk}`}
-              onChange={handleInputChange}
-              onBlur={checkInput}
-              value={lastName}
-              type="text"
-              name="lastName"
-              id="lastName"
-              title="Must be longer than 2 characters"
-            />
-          </label>
+    <div className="pay_container">
+      <h2>Payment</h2>
+      <div className="pay_info">
+        <div className="pay_info_item">
+          <h3>Total to pay</h3>
+          <h2>${toPay}</h2>
+          
         </div>
-        <div className="form_data">
-          <label htmlFor="email">
-            <p>Email</p>
-            <input
-               className={`payment_input ${emailOk}`}
-              onChange={handleInputChange}
-              onBlur={checkInput}
-              value={email}
-              type="email"
-              name="email"
-              id="email"
-            />
-          </label>
-          <label htmlFor="phone">
-            <p>Phone</p>
-            <input
-               className={`payment_input ${phoneOk}`}
-              onChange={handleInputChange}
-              onBlur={checkInput}
-              value={phone}
-              type="tel"
-              name="phone"
-              id="phone"
-            />
-          </label>
-          <label htmlFor="ID">
-            <p>ID</p>
-            <input
-              className={`payment_input ${IdOk}`}
-              onChange={handleInputChange}
-              onBlur={checkInput}
-              value={ID}
-              type="number"
-              name="ID"
-              id="ID"
-            />
-          </label>
-          <label htmlFor="addres">
-            <p>Addres</p>
-            <input
-               className={`payment_input ${addresOk}`}
-              onChange={handleInputChange}
-              onBlur={checkInput}
-              value={addres}
-              type="text"
-              name="addres"
-              id="addres"
-            />
-          </label>
+        <hr/>
+        <div className="pay_info_item">
+            <h3>Name</h3>
+            <h4>{userInfo.name}</h4>
         </div>
-        <div className="payment_confirm">
-          <Link className="pay" to="/payment">
-            Pay
-          </Link>
-          <button className="cancel_buy">Cancel</button>
+        <hr/>
+        <div className="pay_info_item">
+          <h3>Email</h3>
+          <h4>{userInfo.email}</h4>
         </div>
-      </form>
+        <div className="pay_info_item">
+          <h3>Addres</h3>
+          <h4>{userInfo.addres}</h4>
+        </div>
+      </div>
+      <div className="payment_recap">
+        <div onClick={toggleRecap} className="payment_recap-toggle">
+          {(showRecap)?'Hide buy':'Show buy'}
+          <i className={(showRecap) ? "fas fa-chevron-up" : "fas fa-chevron-down"}></i>
+        </div>
+        <div className={(showRecap) ?"payment_reacp_items" : "payment_reacp_items-hide"}>
+          <div className="checkout_basic_container">
+            {
+              cart.map(({id,name,price}) => (
+                <CheckoutBasic 
+                  key={id}
+                  name={name}
+                  price={price}              
+                />
+
+              ))
+            }
+          </div>
+        </div>
+      </div>
+
+      <div className="pay_buttons">
+        <button onClick={newOrder} type="button" className="pay_end">
+          Pay
+        </button>
+        <button className="cancel_buy">Cancel</button>
+      </div>
     </div>
   );
 };

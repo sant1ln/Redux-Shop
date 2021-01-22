@@ -1,5 +1,6 @@
-export const initialState = {
+export const uiState = {
     cart: [],
+    showRecap : true,
     products: [
       {
         "id": 2,
@@ -72,5 +73,9 @@ export const initialState = {
         "price": 57.72
       }, 
     ]
+}
 
+export const userState = {
+    userInfo: [],
+    orders: [],
 }

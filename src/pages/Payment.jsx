@@ -63,9 +63,9 @@ export const Payment = () => {
         <div className={(showRecap) ?"payment_reacp_items" : "payment_reacp_items-hide"}>
           <div className="checkout_basic_container">
             {
-              cart.map(({id,name,price}) => (
+              cart.map(({idCart,name,price}) => (
                 <CheckoutBasic 
-                  key={id}
+                  key={idCart}
                   name={name}
                   price={price}              
                 />

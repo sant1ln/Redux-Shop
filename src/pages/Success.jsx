@@ -57,8 +57,8 @@ export const Success = () => {
           className={showRecap ? "order_reacp_items" : "order_reacp_items-hide"}
         >
           <div className="order_checkout_basic_container">
-            {orders.map(({ id, name, price }) => (
-              <CheckoutBasic key={id} name={name} price={price} />
+            {orders.map(({ idCart, name, price }) => (
+              <CheckoutBasic key={idCart} name={name} price={price} />
             ))}
           </div>
         </div>

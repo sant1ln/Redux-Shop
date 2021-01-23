@@ -4,7 +4,7 @@ export const useFrom = (data) => {
     const initialState ={
         name: "",
         lastName: "",
-        email: "s@s.com",
+        email: "",
         ID: "",
         addres: "",
     }

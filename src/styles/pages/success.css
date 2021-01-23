@@ -99,3 +99,29 @@
     color: white;
     font-size: 1rem;
 }
+
+@media screen and (min-width:1000px){
+    
+
+    .success_helper{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .shop_container_user{
+        width: 30%;
+        margin-right: 20px;
+    }
+
+    .order_recap{
+        width: 30%;
+    }
+
+    .success_button{
+        width: 30%;
+    }
+
+
+
+}

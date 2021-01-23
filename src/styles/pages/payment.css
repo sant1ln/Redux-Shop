@@ -3,7 +3,14 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
-    height: 90vh;
+    font-size: 1.3rem;
+}
+
+.payment_helper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
     font-size: 1.3rem;
 }
 
@@ -96,4 +103,33 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+@media screen and (min-width:1000px){
+    .pay_container{
+        flex-direction: column;
+    }
+
+    .payment_helper{
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-around;
+    }
+
+
+    .pay_info{
+        width: 30%;
+    }
+
+    .payment_recap{
+        width: 30%;
+    }
+
+    .pay_buttons{
+        width: 30%;
+    }
+
+
 }

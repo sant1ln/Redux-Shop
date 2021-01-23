@@ -17,31 +17,36 @@ export const PaymentInfo = () => {
   const dispatch = useDispatch()
   const history = useHistory()
 
-  const addUserInfo = (e) =>{
-    e.preventDefault()
-    dispatch(addUser(formState))
-    setFormState({})
-    history.push('/payment')
-  }
-
+  
   const cancelBuy = () =>{
     dispatch(cancelPurchase())
+    history.push('/')
   }
-
+  
   let isCorrect= ''
-
+  
   if(completed > 4){
-    console.log('x');
     isCorrect= true
   }else{
     isCorrect = false
   }
-
+  
+  const addUserInfo = (e) =>{
+    e.preventDefault()
+    if(isCorrect){
+      dispatch(addUser(formState))
+      setFormState({})
+      history.push('/payment')
+    }else{
+      alert('Fild all inputs')
+    }
+  }
 
   return (
     <div className="payment_container">
       <h2>Enter your shipping information</h2>
       <form className="payment_contianer_form" onSubmit={addUserInfo}>
+      <div className="form_helper">
         <div className="form_data">
           <label htmlFor="name">
             <p>Name</p>
@@ -109,12 +114,24 @@ export const PaymentInfo = () => {
             />
           </label>
         </div>
-        <div className="payment_confirm">
+      </div>
+      <div className="payment_confirm">
           {(isCorrect)
             ?<button type="submit" onClick={addUserInfo} className="pay">Pay</button>
             :<button type="button" className="pay_block">Pay</button>
           }
-          <button onClick={cancelBuy}  className="cancel_buy">Cancel</button>
+          <button onClick={cancelBuy} type="button"  className="cancel_buy">Cancel</button>
+          <div className="container_user">
+            <h2>Deliver to:</h2>
+            <div>
+              <h3>{name}</h3>
+              <h3>{lastName}</h3>
+              <h3>{email}</h3>
+              <h3>{ID}</h3>
+              <h3>{addres}</h3>
+            </div>
+          </div>
+        
         </div>
       </form>
     </div>

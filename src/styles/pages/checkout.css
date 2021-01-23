@@ -2,7 +2,6 @@
     display: flex;
     flex-direction: column;
     width: 100vw;
-    height:100vh;
 }
 
 .checkout-list{
@@ -35,7 +34,8 @@
     font-size: 1rem;
     position: relative;
     right: 30px;
-    color: var(--button_main_color)
+    color: var(--button_main_color);
+    cursor: pointer;
 }
 
 .checkout-list li img{
@@ -49,6 +49,10 @@
     width: 100%;
 }
 
+.checkout_confirm h2{
+    display: none;
+}
+
 .checkout_confirm button{
     width: 70%;
     height: 28px;
@@ -58,7 +62,7 @@
     color: white
 }
 
-.pay{
+.pay_checkout{
     width: 70%;
     height: 28px;
     margin-top: 10px;
@@ -73,7 +77,76 @@
     align-items: center;
 }
 
-.cancel_buy{
+.cancel_buy_checkout{
     background-color: transparent;
     border: 1px solid white;
+}
+
+@media screen and (min-width: 1000px){
+
+    .checkout-container{
+         flex-direction: row;
+         width: 100%;
+         height: 100vh;
+    }
+        
+    .checkout-list{
+        margin: 0;
+        width: 70%;
+        overflow: scroll;
+        overflow-x: hidden;
+    }
+
+    .checkout-list::-webkit-scrollbar{
+        width: 7px;
+    }
+
+    .checkout-list::-webkit-scrollbar-thumb{
+        background-color: var(--alternative_font_color);
+    }
+
+
+    .checkout-list h2{
+        display: none;
+    }
+
+
+    .checkout-list li{
+        height: 150px;
+    }
+
+    .checkout-list li img{
+        width: 20%;
+    }
+
+    .item_data{
+        font-size: 1.4rem;
+    }
+
+
+    .checkout_confirm{
+        width: 30%;
+        margin: 0;
+    }
+
+    .checkout_confirm h2{
+        display: block;
+        font-size: 1.5rem;
+    }
+
+    .cancel{
+        font-size: 1.5rem;
+    }
+
+    .pay_checkout{
+        width: 50%;
+        height: 45px;
+        font-size: 1.4rem;
+    }
+
+    .checkout_confirm button{
+        width: 50%;
+        height: 45px;
+        font-size: 1.3rem;
+    }
 }

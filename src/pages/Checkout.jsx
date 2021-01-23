@@ -12,9 +12,10 @@ export const Checkout = () => {
   
   let toPay = 0
   cart.map((data)=>(
+    
     toPay += data.price
   ))
-  
+  toPay = toPay.toFixed(1)
   const remove = (idCart) =>{
     dispatch(removeToCart(idCart))
   }
@@ -33,9 +34,9 @@ export const Checkout = () => {
   return (
     <div className="checkout-container">
       <ul className="checkout-list">
-        <h2>To pay: {toPay}</h2>
+        <h2>To pay: ${toPay}</h2>
         {cart.map((item) => (
-          <li key={item.id}>
+          <li key={item.idCart}>
             <img src={item.img} alt="" />
             <div className="item_data">
               <p>{item.name}</p>
@@ -46,10 +47,11 @@ export const Checkout = () => {
         ))}
       </ul>
       <div className="checkout_confirm">
-        <Link className="pay" to="/paymentinfo">
+        <h2>To pay: ${toPay}</h2>
+        <Link className="pay_checkout" to="/paymentinfo">
           Pay
         </Link>
-        <button onClick={cancelAll} className="cancel_buy">Cancel</button>
+        <button onClick={cancelAll} className="cancel_buy_checkout">Cancel</button>
       </div>
     </div>
   );

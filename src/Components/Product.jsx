@@ -22,7 +22,7 @@ export const Product = ({ name, id, desc, img, price }) => {
   return (
     <div className="product_container">
       <Link to={`/product/${id}`}>
-        <img src={img} alt={name} />
+        <img className="image_product" src={img} alt={name} />
       </Link>
       <div className="product_info">
         <div className="product_info_title">

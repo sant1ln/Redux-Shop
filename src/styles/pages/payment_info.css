@@ -119,3 +119,38 @@
     justify-content: center;
     align-items: center;
 }
+
+
+.container_user{
+    display: none;
+}
+
+@media screen and (min-width: 1000px){
+    
+    .payment_contianer_form{
+        flex-direction: row;
+        border: none;
+    }
+
+    .form_helper{
+        width: 70%;
+        border: 1.5px solid var(--border_color);
+    }
+
+    .payment_confirm{
+        width: 30%;
+    }
+
+    .container_user{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-items: center;
+        width: 70%;
+        border: 2px solid var(--border_color);
+        font-size: .8rem;
+    }
+
+
+
+}

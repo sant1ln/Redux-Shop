@@ -14,22 +14,26 @@ export const ProductInfo = () => {
   const dispatch = useDispatch()
   const {img,name,description,price} = product
   const add = () =>{
-    dispatch(addToCart(product))
+    let itemId = Math.floor(Math.random() * (500 - 100)) + 100
+    dispatch(addToCart(product,itemId))
   }
   
   return (
     <div className="productInfo_container">
-      <img src={img} alt="react_img" />
-      <div className="productInfo_data">
-        <div className="productInfo_data-title">
-          <h2>{name}</h2>
+      <div className="productInfo_container-divisor" >
+        <img src={img} alt="react_img" />
+        <div className="productInfo_data">
+          <div className="productInfo_data-title">
+            <h2>{name}</h2>
+            <p className="productInfo_data-price">${price}</p>
+          </div>
+          <p className="productInfo_data-description">{description}</p>
+          
         </div>
-        <p className="productInfo_data-description">{description}</p>
-        <p className="productInfo_data-price">${price}</p>
       </div>
       <div className="productInfo_buttons">
         <button onClick={add} className="add">Add to cart <i className="fas fa-shopping-cart"></i></button>
-        <Link to="/checkout" onClick={add} className="pay">Pay</Link>
+        <Link to="/checkout" onClick={add} className="pay_info_button">Pay</Link>
       </div>
     </div>
   );

@@ -8,7 +8,6 @@ export const useData = () =>{
         const actualProduct = products.filter(item => 
                 item.id === id
             )
-        console.log(typeof(actualProduct))
         return actualProduct
     }
 

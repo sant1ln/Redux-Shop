@@ -29,7 +29,8 @@ export const Success = () => {
       </div>
 
       <h2>Deliver to:</h2>
-      <div className="shop_container_user">
+      <div className="success_helper">
+        <div className="shop_container_user">
         <div className="shop_container_user_item">
           <h3>Name</h3>
           <h4>{name + " " + lastName} </h4>
@@ -64,6 +65,7 @@ export const Success = () => {
       </div>
       <div className="success_button" onClick={endProcess}>
           <button>End Process</button>
+      </div>
       </div>
     </div>
   );

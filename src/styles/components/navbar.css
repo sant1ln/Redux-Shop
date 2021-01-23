@@ -83,3 +83,42 @@
     color: white;
     background-color: var(--inputs_main_color);
 }
+
+
+
+
+
+@media screen and (min-width: 1000px){
+
+    .navbar{
+        padding: 10px 10px;
+    }
+
+    .navbar_title h1{
+        font-size: 1.8rem;
+        margin-right: 20px;
+    }
+
+    .navbar_search input{
+        width: 70%;
+        height: 30px;
+    }
+
+    .navbar_buttons{
+        width: 20%;
+        display: flex;
+        font-size: 1.5rem ;
+        justify-content: space-around;
+        color: var(--button_main_color)
+    }
+
+    .counter{
+        width: 18px;
+        height: 18px;
+        font-size: .8rem;
+    }
+
+
+}
+
+
